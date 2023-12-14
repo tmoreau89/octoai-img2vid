@@ -47,7 +47,7 @@ def img2vid(my_upload, num_videos=2):
         progress_bar = st.progress(percent_complete, text=progress_text)
 
         # Rotate image and perform some rescaling
-        input_img = Image.open(my_upload)
+        input_img = Image.open(my_upload).convert("RGB")
         input_img = rotate_image(input_img)
 
         col1.image(input_img)
