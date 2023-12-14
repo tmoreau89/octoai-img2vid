@@ -35,7 +35,7 @@ def rotate_image(image):
     except:
         return image
 
-def img2vid(my_upload, num_videos=2):
+def img2vid(my_upload, num_videos=3):
     # Wrap all of this in a try block
     col1, col2 = st.columns(2)
     try:
@@ -64,7 +64,7 @@ def img2vid(my_upload, num_videos=2):
 
         for future in futures:
             while not oai_client.is_future_ready(future):
-                time.sleep(0.5)
+                time.sleep(1)
                 percent_complete = min(99, percent_complete+1)
                 if percent_complete == 99:
                     progress_text = "Video generation is taking longer than usual, hang tight!"
